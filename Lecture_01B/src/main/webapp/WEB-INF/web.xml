@@ -20,4 +20,15 @@
   	<servlet-name>HelloWorldWithWebXML</servlet-name>
   	<url-pattern>/helloWorld</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>HelloName</servlet-name>
+	<servlet-class>
+			huy.java.server.HelloName
+	</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloName</servlet-name>
+  	<url-pattern>/helloNameJava</url-pattern>
+  </servlet-mapping>
 </web-app>
