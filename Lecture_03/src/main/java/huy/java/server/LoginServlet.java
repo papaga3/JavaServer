@@ -23,6 +23,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) {
 		ServletContext context = config.getServletContext();
+		// String demo = config.getInitParameter("demo");
 		String driverClass = context.getInitParameter("driverClass");
 		String db = "jdbc:mariadb://mariadb.vamk.fi/qn_java_server";
 		
