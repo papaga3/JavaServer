@@ -22,7 +22,7 @@ public class AddUserServlet extends HttpServlet {
 	PreparedStatement statement;
 	@Override
 	public void init() {
-		try {
+		try { 
 			Class.forName("org.mariadb.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/mydb", "root", "root");
 			statement = connection.prepareStatement("INSERT INTO users (firstName, lastName, email) VALUES (?, ?, ?)");
