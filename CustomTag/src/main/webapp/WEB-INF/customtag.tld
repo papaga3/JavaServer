@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib>
+	<tlibversion>2.0</tlibversion>
+	<jspversion>2.0</jspversion>
+	<shortname>user_information</shortname>
+	<info>Display user information</info>
+	<uri>http://huy.java.server</uri>
+	
+	<tag>
+		<name>displayUser</name>
+		<tagclass>huy.java.server.UserResultHandler</tagclass>
+		<info>Some info</info>
+	</tag>
+</taglib>

@@ -17,5 +17,7 @@
 	<br /> Name: <jsp:getProperty property="name" name="product" />
 	<br /> Description: <jsp:getProperty property="desc" name="product" />
 	<br /> Price: <jsp:getProperty property="price" name="product" />
+	
+	Name: <%=product.getName() %>
 </body>
 </html>
