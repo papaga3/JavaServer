@@ -42,6 +42,8 @@ public class UserController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String pathInfo = req.getPathInfo();
 		
+		res.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+		
 		// Return all users
 		if(pathInfo == null || pathInfo.equals("/")) {
 			List<User> users = userDAO.selectAllUsers();
@@ -70,6 +72,8 @@ public class UserController extends HttpServlet{
 	// POST/RestAPI/users/
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		res.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+		
 		String pathInfo = req.getPathInfo();
 		System.out.println(pathInfo);
 		if(pathInfo == null | pathInfo == "/") {
