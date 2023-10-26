@@ -1,5 +1,7 @@
 package huy.java.server;
 
+import huy.java.server.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -43,6 +45,7 @@ public class UserController extends HttpServlet{
 		String pathInfo = req.getPathInfo();
 		
 		res.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+		res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST, DELETE");
 		
 		// Return all users
 		if(pathInfo == null || pathInfo.equals("/")) {
@@ -71,8 +74,9 @@ public class UserController extends HttpServlet{
 	// Post new user
 	// POST/RestAPI/users/
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		res.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+		res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD, PUT, POST, DELETE");
 		
 		String pathInfo = req.getPathInfo();
 		System.out.println(pathInfo);
@@ -87,6 +91,7 @@ public class UserController extends HttpServlet{
 			String payload = buffer.toString();
 			User user = gson.fromJson(payload, User.class);
 			userDAO.insertUser(user);
+			sendAsJSON(res, "Success");
 		} else {
 			res.sendError(HttpServletResponse.SC_BAD_REQUEST);
 			return;
