@@ -25,7 +25,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebFilter(urlPatterns = "/users/*")
 public class UserFilter implements Filter {
 
-	private String keyString = "mrufzDPgBTA6IFx5nPnOEfBqlre8I5PX87ckbFt+OE93z3iEbW+h09tP1rtdpNqur4aVOY6mgck6Gmr5fci3nA==";
+	private String keyString = "prufzDPgBTA6IFx5nPnOEfBqlre8I5PX87ckbFt+OE93z3iEbW+h09tP1rtdpNqur4aVOY6mgck6Gmr5fci3nA==";
 
 	public UserFilter() {
 

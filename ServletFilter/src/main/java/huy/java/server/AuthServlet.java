@@ -58,7 +58,7 @@ public class AuthServlet extends HttpServlet {
 			// System.out.println(secretString);
 			String jwt = Jwts.builder().subject("securityToken").claim("userName", userName).signWith(key).compact();
 			response.addCookie(new Cookie("token", jwt));
-			sendAsJSON(response, jwt);
+			sendAsJSON(response, jwt);  
 		} else {
 			reqDis = request.getRequestDispatcher("login.jsp");
 			reqDis.include(request, response);
